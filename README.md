@@ -15,7 +15,7 @@ The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
 ### `npm run dev`
-Runs the middleware in the development mode.\
+Runs the middleware in the development mode.
 
 ### `npm test`
 
