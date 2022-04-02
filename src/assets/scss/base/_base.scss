@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.active{
+    color:var(--main-company-color) !important;
+
+    span{       
+        color: var(--main-company-color) !important;
+    }
+    
+}
+
+.sidebar.sidebar__close .active {
+    color:var(--secondary-color);
+        .sidebar__sub-menu{
+            .sidebar__active-submenu-indicator{
+                opacity: 1;
+            }
+        }
+    svg{
+        color:var(--main-company-color) !important;
+    }
+        
+    
+}
+.base__hr-ease{
+  
+    margin-top: 4px;
+    background-image: -webkit-gradient(linear,left top,right top,from(transparent),color-stop(#d4dadb),to(transparent));
+    background-image: -webkit-linear-gradient(left,transparent,#d4dadb,transparent);
+    background-image: -o-linear-gradient(left,transparent,#d4dadb,transparent);
+    background-image: linear-gradient(to right,transparent,#d4dadb,transparent);
+    box-sizing: content-box;
+    border: 0;
+    height: 1px;
+    max-width: 100%;
+    max-width: 100%;
+    
+}
+.base__hr-right-left-ease{
+    margin-top: 4px;
+    margin-bottom: 5px;
+    background-image: -webkit-gradient(linear,left top,transparent top,from(transparent),color-stop(#d4dadb),to(transparent));
+    background-image: -webkit-linear-gradient(left,transparent,#d4dadb,transparent);
+    background-image: -o-linear-gradient(left,transparent,#d4dadb,transparent);
+    background-image: linear-gradient(to right,transparent,#d4dadb,transparent);
+    
+    box-sizing: content-box;
+    border: 0px;
+    height: 1px;
+    max-width: 100%;
+    max-width: 100%;
+}
+.base__hr-right-ease{
+    margin-top: 4px;
+    margin-bottom: 5px;
+    background-image: -webkit-gradient(linear,left top,grey top,from(transparent),color-stop(#d4dadb),to(transparent));
+    background-image: -webkit-linear-gradient(left,grey,#d4dadb,transparent);
+    background-image: -o-linear-gradient(left,grey,#d4dadb,transparent);
+    background-image: linear-gradient(to right,grey,#d4dadb,transparent);
+    box-sizing: content-box;
+    border: 0px;
+    height: 1px;
+    max-width: 100%;
+    max-width: 100%;
+}
+.base__container-tabs{
+    display:flex;
+    justify-content:center;
+    flex-wrap: wrap;
+    width:100%;
+    margin-bottom: 10px;
+    align-items:baseline;
+    box-sizing: border-box;
+    background: var(--secondary-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    %height-tabs{
+        height: 74px !important;
+
+    }
+    .base__tab{
+        @extend %height-tabs;
+    }
+}
