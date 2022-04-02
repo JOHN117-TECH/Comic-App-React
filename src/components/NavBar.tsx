@@ -10,8 +10,6 @@ export const NavBar = () => {
 
   const { comicData, ratingValue } = useSelector((state:RootState) => state.Comic)
 
-
-
   return (
     <>
     <AppBar position="fixed" color="primary">

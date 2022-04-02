@@ -3,7 +3,7 @@ import { axiosInstance } from "../../utils/axiosInstance";
 
 
 const getComicService = (comic:number) =>{
-    return axiosInstance.get<ComicInterface>(`${process.env.REACT_APP_URL_COMIC}${comic}/info.0.json`)
+    return axiosInstance.get<ComicInterface>(`${process.env.REACT_APP_URL_COMIC}${comic}`)
 }
 
 export {
