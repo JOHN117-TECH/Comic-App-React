@@ -123,6 +123,11 @@
         height: 150px;
         overflow-y: scroll;
     }
+    .comic__container-options-progress{
+        @media screen and(max-width:900px){
+            display: none !important;
+        }
+    }
     .comic__container-options-description{
         @media screen and(max-width:900px){
             display: none !important;
@@ -143,4 +148,9 @@
         overflow-y: scroll;
     }
 }
-
+.center {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}

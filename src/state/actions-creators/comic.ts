@@ -12,7 +12,6 @@ export const startLoadingComicData = (comic=1) => async (dispatch:Dispatch<Actio
         dispatch(startLoadingComic())
         const resp = await getComicService(comic)
         const {data} = resp
-        dispatch(finishLoadingComic())
         if(resp.status === 200){
             dispatch({
                 type:ActionTypeComic.LOAD_COMIC_DATA,
@@ -25,6 +24,7 @@ export const startLoadingComicData = (comic=1) => async (dispatch:Dispatch<Actio
                 
             })
         }
+        setTimeout(() => {dispatch(finishLoadingComic())},2000)
     } catch (error) {
         //Toast.fire({icon:"error",title:`Algo salió mal`})
         //dispatch(finishLoadingList())
@@ -35,8 +35,7 @@ export const startLoadingComicData = (comic=1) => async (dispatch:Dispatch<Actio
 export const changeRatingValue = (value:number) => (dispatch:Dispatch<ActionsComic>) => {
     dispatch({
         type:ActionTypeComic.CHANGE_VALUE_RATING,
-        payload: value
-        
+        payload: value  
     })
 
 }

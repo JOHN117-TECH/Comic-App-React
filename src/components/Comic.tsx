@@ -8,6 +8,8 @@ import TextField from '@mui/material/TextField';
 import Rating from '@mui/material/Rating';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import CircularProgress from '@mui/material/CircularProgress';
+import { Section } from './Section';
 
 
 
@@ -22,12 +24,11 @@ const StyledRating = styled(Rating)({
 
 export const Comic = () => {
 
-
-
     const dispatch = useDispatch()
 
     const { comicData } = useSelector((state:RootState) => state.Comic)
-
+    
+    const {loadingComic} = useSelector((state:RootState) => state.ui)
 
     const [numRandom, setnumRandom] = useState<number>(1);
     const [numComic, setnumComic] = useState<string>('');
@@ -99,27 +100,23 @@ export const Comic = () => {
                     icon={<FavoriteIcon fontSize="inherit" />}
                     emptyIcon={<FavoriteBorderIcon fontSize="inherit" />}
                 />
+                
                 </div>
-                { comicData.transcript !== "" && 
-                    <div className="comic__container-options-description">  
-                    <h2>Description</h2>
-                    <div>
-                       <p>{comicData.transcript}</p>
-                    </div>
-                </div>
+                { loadingComic 
+                 ? <div className='comic__container-options-progress center'><CircularProgress size={50}/></div>
+                 : comicData.transcript !== "" && (
+                      <div className="comic__container-options-description">  
+                        <h2>Description</h2>
+                        <div>
+                          <p>{comicData.transcript}</p>
+                        </div>
+                      </div>
+                    )
                 }
             </div>
-            <div className="comic__container-comic">
-               <h2 className="comic__container-comic-title"><b>{comicData.title.toUpperCase()}</b></h2>
-               <div className="comic__container-comic-img"><img src={comicData.img} alt={comicData.alt}/></div>
-            </div>
-            { comicData.transcript !== "" && 
-              <div className="comic__container-description">
-                    <h2>Description</h2>
-                    <div>
-                      <p>{comicData.transcript}</p>
-                    </div>
-              </div>
+            { loadingComic 
+              ? <div className='center'><CircularProgress size={100}/></div>
+              : <Section/>
             }
             
         </div>
